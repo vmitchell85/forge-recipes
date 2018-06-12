@@ -27,6 +27,7 @@ class RecipeController extends Controller
         return Recipe::create([
             'title' => request()->title,
             'body' => request()->body,
+            'description' => request()->description,
             'user_id' => Auth::user()->id
         ]);
     }

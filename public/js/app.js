@@ -31031,6 +31031,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -31044,7 +31050,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             recipe: {
                 title: null,
-                body: null
+                body: null,
+                description: null
             },
             cmConfig: {
                 theme: 'monokai',
@@ -31143,6 +31150,41 @@ var render = function() {
       ],
       1
     ),
+    _vm._v(" "),
+    _c("div", { staticClass: "w-full px-3 mt-3" }, [
+      _c(
+        "label",
+        {
+          staticClass:
+            "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2",
+          attrs: { for: "recipe-title" }
+        },
+        [_vm._v("\n            Recipe Description\n        ")]
+      ),
+      _vm._v(" "),
+      _c("textarea", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.recipe.description,
+            expression: "recipe.description"
+          }
+        ],
+        staticClass:
+          "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight",
+        attrs: { rows: "5" },
+        domProps: { value: _vm.recipe.description },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.recipe, "description", $event.target.value)
+          }
+        }
+      })
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "mt-3 text-center" }, [
       _c(
@@ -41190,6 +41232,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -41252,7 +41297,14 @@ var render = function() {
         })
       ],
       1
-    )
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "w-full px-3 mt-3" }, [
+      _c("div", {
+        staticClass: "bg-grey-lighter p-3 rounded",
+        domProps: { textContent: _vm._s(_vm.recipe.description) }
+      })
+    ])
   ])
 }
 var staticRenderFns = []

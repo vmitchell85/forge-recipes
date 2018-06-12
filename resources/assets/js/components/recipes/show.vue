@@ -3,6 +3,9 @@
         <div class="w-full px-3 mt-3">
             <codemirror v-model="recipe.body" :options="cmConfig"></codemirror>
         </div>
+        <div class="w-full px-3 mt-3">
+            <div class="bg-grey-lighter p-3 rounded" v-text="recipe.description"></div>
+        </div>
     </div>
 </template>
 <script>

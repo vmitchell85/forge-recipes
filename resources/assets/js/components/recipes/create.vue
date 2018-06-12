@@ -12,6 +12,12 @@
             </label>
             <codemirror v-model="recipe.body" :options="cmConfig"></codemirror>
         </div>
+        <div class="w-full px-3 mt-3">
+            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="recipe-title">
+                Recipe Description
+            </label>
+            <textarea class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight" v-model="recipe.description" rows="5"></textarea>
+        </div>
         <div class="mt-3 text-center">
             <button class="bg-orange px-4 py-2 rounded" @click="create">Create</button>
         </div>
@@ -30,7 +36,8 @@ export default {
         return {
             recipe: {
                 title: null,
-                body: null
+                body: null,
+                description: null
             },
             cmConfig: {
                 theme: 'monokai',
