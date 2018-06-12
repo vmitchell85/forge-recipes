@@ -988,6 +988,7 @@ window.Vue = __webpack_require__(33);
  */
 
 Vue.component('recipes-create', __webpack_require__(41));
+Vue.component('recipes-show', __webpack_require__(52));
 
 var app = new Vue({
   el: '#app'
@@ -41120,6 +41121,149 @@ CodeMirror.defineMIME('application/x-sh', 'shell');
 
 });
 
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(42)
+/* script */
+var __vue_script__ = __webpack_require__(53)
+/* template */
+var __vue_template__ = __webpack_require__(54)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/recipes/show.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4885503e", Component.options)
+  } else {
+    hotAPI.reload("data-v-4885503e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_codemirror__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_codemirror___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_codemirror__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_codemirror_mode_shell_shell_js__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_codemirror_mode_shell_shell_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_codemirror_mode_shell_shell_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_codemirror_lib_codemirror_css__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_codemirror_lib_codemirror_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_codemirror_lib_codemirror_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_codemirror_theme_monokai_css__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_codemirror_theme_monokai_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_codemirror_theme_monokai_css__);
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        recipe: Object
+    },
+    data: function data() {
+        return {
+            cmConfig: {
+                theme: 'monokai',
+                lineNumbers: true,
+                mode: 'shell',
+                readOnly: true
+            }
+        };
+    },
+
+    components: {
+        codemirror: __WEBPACK_IMPORTED_MODULE_0_vue_codemirror__["codemirror"]
+    },
+    methods: {
+        create: function create() {
+            axios.post('/api/recipes', this.recipe).then(function (response) {
+                top.location.href = "/recipes/" + response.data.id;
+            }).catch(function (error) {
+                // TODO
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "w-full px-3 mt-3" },
+      [
+        _c("codemirror", {
+          attrs: { options: _vm.cmConfig },
+          model: {
+            value: _vm.recipe.body,
+            callback: function($$v) {
+              _vm.$set(_vm.recipe, "body", $$v)
+            },
+            expression: "recipe.body"
+          }
+        })
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4885503e", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

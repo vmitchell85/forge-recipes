@@ -9,7 +9,7 @@ class RecipeController extends Controller
 {
     public function show(Recipe $recipe)
     {
-        return $recipe;
+        return view('recipes.show')->with('recipe', $recipe->load('owner'));
     }
 
     public function create()

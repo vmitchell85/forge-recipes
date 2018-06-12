@@ -4486,6 +4486,10 @@ button,
   color: #fff5eb;
 }
 
+.text-xxs {
+  font-size: .5rem;
+}
+
 .text-xs {
   font-size: .75rem;
 }
@@ -8637,6 +8641,10 @@ button,
     color: #fff5eb;
   }
 
+  .sm\:text-xxs {
+    font-size: .5rem;
+  }
+
   .sm\:text-xs {
     font-size: .75rem;
   }
@@ -12772,6 +12780,10 @@ button,
 
   .md\:hover\:text-brand-lightest:hover {
     color: #fff5eb;
+  }
+
+  .md\:text-xxs {
+    font-size: .5rem;
   }
 
   .md\:text-xs {
@@ -16911,6 +16923,10 @@ button,
     color: #fff5eb;
   }
 
+  .lg\:text-xxs {
+    font-size: .5rem;
+  }
+
   .lg\:text-xs {
     font-size: .75rem;
   }
@@ -21046,6 +21062,10 @@ button,
 
   .xl\:hover\:text-brand-lightest:hover {
     color: #fff5eb;
+  }
+
+  .xl\:text-xxs {
+    font-size: .5rem;
   }
 
   .xl\:text-xs {

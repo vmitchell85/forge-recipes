@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('recipes-create', require('./components/recipes/create.vue'));
+Vue.component('recipes-show', require('./components/recipes/show.vue'));
 
 const app = new Vue({
     el: '#app'
