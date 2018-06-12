@@ -12,6 +12,11 @@ class RecipeController extends Controller
         return $recipe;
     }
 
+    public function create()
+    {
+        return view('recipes.create');
+    }
+
     public function store()
     {
         request()->validate([

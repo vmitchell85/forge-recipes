@@ -22,6 +22,7 @@
                         <a href="{{ url('/') }}" class="no-underline">
                             {{ config('app.name', 'Laravel') }}
                         </a>
+                        <a class="no-underline hover:underline text-grey-darker text-sm" href="{{ url('/recipes/create') }}">Create Recipe</a>
                     </div>
                     <div class="flex-1 text-right">
                         @guest
