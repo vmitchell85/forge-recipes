@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('recipes/{recipe}', 'RecipeController@show');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
